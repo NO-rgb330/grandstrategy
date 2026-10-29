@@ -1,0 +1,89 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Conquest: Europe</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Main Menu Screen -->
+  <div id="main-menu" class="screen">
+    <div class="menu-panel">
+      <h1 class="game-title">GRAND CONQUEST</h1>
+      <p class="subtitle">EUROPE</p>
+      <div class="menu-buttons">
+        <button id="btn-play" class="menu-btn">PLAY</button>
+        <button id="btn-load" class="menu-btn">LOAD</button>
+        <button id="btn-settings" class="menu-btn">SETTINGS</button>
+        <button id="btn-about" class="menu-btn">ABOUT</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen hidden">
+    <!-- Top Bar -->
+    <div id="top-bar">
+      <div class="top-stat"><span class="label">Gold:</span> <span id="stat-gold">0</span></div>
+      <div class="top-stat"><span class="label">Manpower:</span> <span id="stat-manpower">0</span></div>
+      <div class="top-stat"><span class="label">Turn:</span> <span id="stat-turn">1</span></div>
+      <div class="top-stat"><span class="label">Date:</span> <span id="stat-date">Jan 1940</span></div>
+    </div>
+
+    <!-- Left Sidebar -->
+    <div id="left-sidebar">
+      <button id="btn-shop" class="side-btn">SHOP</button>
+      <button id="btn-units" class="side-btn">UNITS</button>
+      <button id="btn-diplo" class="side-btn">DIPLO</button>
+      <button id="btn-research" class="side-btn">RESEARCH</button>
+      <button id="btn-politics" class="side-btn">POLITICS</button>
+      <button id="btn-end-turn" class="side-btn end-turn">END TURN</button>
+    </div>
+
+    <!-- Map Container -->
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div id="right-sidebar">
+      <div class="info-panel">
+        <h3>WORLD STATUS</h3>
+        <div class="progress-label">Map Controlled:</div>
+        <div class="progress-bar">
+          <div id="map-progress-fill" class="progress-fill"></div>
+        </div>
+        <div id="map-progress-text">0%</div>
+      </div>
+      <div class="info-panel" id="selected-territory-info">
+        <h3>SELECTED</h3>
+        <p id="sel-name">None</p>
+        <p id="sel-owner">Owner: -</p>
+        <p id="sel-units">Units: -</p>
+        <p id="sel-income">Income: -</p>
+      </div>
+      <div class="info-panel" id="action-panel">
+        <h3>ACTIONS</h3>
+        <button id="btn-recruit" class="action-btn" disabled>RECRUIT (50G)</button>
+        <button id="btn-attack" class="action-btn" disabled>ATTACK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Messages -->
+  <div id="modal-overlay" class="hidden">
+    <div id="modal-content">
+      <p id="modal-message"></p>
+      <button id="modal-close">CLOSE</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="game.js"></script>
+  <script src="map.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
